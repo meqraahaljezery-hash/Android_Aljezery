@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "902240695859",
+    "project_id": "al-jezery",
+    "storage_bucket": "al-jezery.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:902240695859:android:8b22a35148006b78731546",
+        "android_client_info": {
+          "package_name": "com.aistudio.maqraah.jazari"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "902240695859-guefn0jabcdi393um4jm324387kbdlpa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBumUo1WR88kIDJKWkuoJRRuPNqt5PPCHw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "902240695859-guefn0jabcdi393um4jm324387kbdlpa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
