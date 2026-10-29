@@ -1,45 +1,119 @@
 rules_version = '2';
+
 service cloud.firestore {
-  match /databases/{database}/documents {
-    function isAuthenticated() {
-      return request.auth != null;
-    }
-    function isOwner(userId) {
-      return isAuthenticated() && request.auth.uid == userId;
-    }
-    
-    match /users/{userId} {
-      allow read: if isAuthenticated();
-      allow write: if isOwner(userId);
-    }
-    
-    match /classes/{classId} {
-      allow read: if isAuthenticated();
-      allow write: if isAuthenticated();
-    }
-    
-    match /messages/{messageId} {
-      allow read, write: if isAuthenticated();
-    }
-    
-    match /payment_requests/{requestId} {
-      allow read: if isAuthenticated();
-      allow create: if isAuthenticated();
-      allow update: if isAuthenticated();
-    }
-    
-    match /credit_ledger/{ledgerId} {
-      allow read: if isAuthenticated();
-      allow write: if isAuthenticated();
-    }
+match /databases/{database}/documents {
 
-    match /announcements/{announcementId} {
-      allow read: if isAuthenticated();
-      allow write: if isAuthenticated();
-    }
+function signedIn() {
+  return request.auth != null;
+}
 
-    match /audit_logs/{logId} {
-      allow read, write: if isAuthenticated();
-    }
-  }
+function isAdmin() {
+  return signedIn()
+    && request.auth.token.admin == true;
+}
+
+function isTeacher() {
+  return signedIn()
+    && request.auth.token.teacher == true;
+}
+
+function isOwner(userId) {
+  return signedIn()
+    && request.auth.uid == userId;
+}
+
+// Student and teacher profiles
+match /users/{userId} {
+  allow read: if isOwner(userId) || isAdmin()
+    || (isTeacher()
+        && resource.data.teacherId == request.auth.uid);
+
+  allow create: if isAdmin()
+    || (isOwner(userId)
+        && (!('role' in request.resource.data)
+            || request.resource.data.role == 'student')
+        && (!('balance' in request.resource.data)
+            || request.resource.data.balance == 0));
+
+  allow update, delete: if isAdmin();
+
+  // Users may update their own approved profile fields.
+  allow update: if isOwner(userId)
+    && request.resource.data.diff(resource.data)
+      .affectedKeys()
+      .hasOnly([
+        'displayName',
+        'phone',
+        'city',
+        'photoUrl',
+        'language',
+        'updatedAt'
+      ]);
+}
+
+// Classes
+match /classes/{classId} {
+  allow read: if signedIn();
+
+  allow create: if isAdmin()
+    || (isTeacher()
+        && request.resource.data.teacherId == request.auth.uid);
+
+  allow update, delete: if isAdmin()
+    || (isTeacher()
+        && resource.data.teacherId == request.auth.uid
+        && request.resource.data.teacherId == request.auth.uid);
+}
+
+// Messages
+match /messages/{messageId} {
+  allow read: if isAdmin()
+    || (signedIn()
+        && (resource.data.senderId == request.auth.uid
+            || resource.data.receiverId == request.auth.uid));
+
+  allow create: if signedIn()
+    && request.resource.data.senderId == request.auth.uid;
+
+  allow update, delete: if isAdmin();
+}
+
+// Payment requests
+match /payment_requests/{requestId} {
+  allow create: if signedIn()
+    && request.resource.data.userId == request.auth.uid;
+
+  allow read: if isAdmin()
+    || (signedIn()
+        && resource.data.userId == request.auth.uid);
+
+  allow update, delete: if isAdmin();
+}
+
+// Credit ledger: only administrators may change records
+match /credit_ledger/{ledgerId} {
+  allow read: if isAdmin()
+    || (signedIn()
+        && resource.data.userId == request.auth.uid);
+
+  allow create, update, delete: if isAdmin();
+}
+
+// Announcements
+match /announcements/{announcementId} {
+  allow read: if signedIn();
+  allow create, update, delete: if isAdmin();
+}
+
+// Audit logs
+match /audit_logs/{logId} {
+  allow read, write: if isAdmin();
+}
+
+// Deny all unspecified access
+match /{document=**} {
+  allow read, write: if false;
+}
+
+}
 }
