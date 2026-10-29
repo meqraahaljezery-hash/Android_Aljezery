@@ -1,0 +1,43 @@
+{
+  "entities": {
+    "User": {
+      "name": "string",
+      "email": "string",
+      "role": "string",
+      "studentCode": "string",
+      "phone": "string",
+      "language": "string",
+      "createdAt": "timestamp"
+    },
+    "Class": {
+      "title": "string",
+      "teacherId": "string",
+      "teacherName": "string",
+      "scheduleTime": "timestamp",
+      "status": "string"
+    },
+    "Message": {
+      "chatId": "string",
+      "senderId": "string",
+      "text": "string",
+      "timestamp": "timestamp"
+    },
+    "PaymentRequest": {
+      "userId": "string",
+      "userName": "string",
+      "amountEtb": "number",
+      "minutesRequested": "number",
+      "paymentMethod": "string",
+      "status": "string",
+      "createdAt": "timestamp"
+    },
+    "CreditLedger": {
+      "userId": "string",
+      "amountEtb": "number",
+      "minutesAdded": "number",
+      "type": "string",
+      "reason": "string",
+      "createdAt": "timestamp"
+    }
+  }
+}

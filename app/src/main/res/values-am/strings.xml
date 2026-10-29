@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">ኢማም አልጀዘሪ መቅራአ</string>
+    <string name="welcome_title">እንኳን ወደ ኢማም አልጀዘሪ መቅራአ በደህና መጡ</string>
+    <string name="welcome_subtitle">የቁርአን ቲላዋ፣ ተጅዊድ እና የኢጃዛ ትምህርት በሰነድ</string>
+    <string name="sign_in_google">በ Google ግባ</string>
+    <string name="select_language">ቋንቋ ይምረጡ</string>
+    <string name="amharic">አማርኛ</string>
+    <string name="arabic">العربية</string>
+    <string name="english">English</string>
+    <string name="home">ዋና ገጽ</string>
+    <string name="chat">ቻት</string>
+    <string name="classes">ክፍሎች</string>
+    <string name="credits">ክሬዲት</string>
+    <string name="profile">ፕሮፋይል</string>
+    <string name="register">ምዝገባ</string>
+    <string name="full_name">ሙሉ ስም</string>
+    <string name="age">ዕድሜ</string>
+    <string name="gender">ጾታ</string>
+    <string name="city">ከተማ / አካባቢ</string>
+    <string name="phone">ስልክ ቁጥር</string>
+    <string name="quran_level">የቁርአን ንባብ ደረጃ</string>
+    <string name="program_type">የሚፈለገው ፕሮግራም</string>
+    <string name="submit_registration">ምዝገባ አጠናቅ</string>
+    <string name="student_code">የተማሪ ኮድ</string>
+    <string name="minute_balance">የደቂቃ ቀሪ ሂሳብ</string>
+    <string name="buy_credits">ደቂቃ ግዛ</string>
+    <string name="rate_per_min">1 ደቂቃ = 5 ብር</string>
+    <string name="telebirr">ቴሌብር (Telebirr)</string>
+    <string name="cbe">የኢትዮጵያ ንግድ ባንክ (CBE)</string>
+    <string name="boa">አቢሲኒያ ባንክ (BOA)</string>
+    <string name="mpesa">ኤም-ፔሳ (M-Pesa)</string>
+    <string name="admin_dashboard">የአስተዳዳሪ ዳሽቦርድ</string>
+    <string name="announcements">ማስታወቂያዎች</string>
+    <string name="live_classes">የቀጥታ ትምህርት ክፍሎች</string>
+    <string name="settings">ቅንብሮች</string>
+    <string name="logout">ውጣ</string>
+</resources>

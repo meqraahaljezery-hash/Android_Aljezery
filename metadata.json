@@ -1,0 +1,6 @@
+{
+  "name": "ኢማም አልጀዘሪ መቅራአ",
+  "description": "Imam Al-Jazari Maqraah for Quranic Recitation and Ijazah with Sanad",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">مَقْرَأَةُ الإِمَامِ الجَزَرِيِّ</string>
+    <string name="welcome_title">أهلاً بك في مقرأة الإمام الجزري</string>
+    <string name="welcome_subtitle">تلاوة القرآن وتجويده والإجازة بالسند المتصل</string>
+    <string name="sign_in_google">تسجيل الدخول بواسطة جوجل</string>
+    <string name="select_language">اختر اللغة</string>
+    <string name="amharic">الأمهارية</string>
+    <string name="arabic">العربية</string>
+    <string name="english">الإنجليزية</string>
+    <string name="home">الرئيسية</string>
+    <string name="chat">المحادثة</string>
+    <string name="classes">الحصص</string>
+    <string name="credits">الرصيد</string>
+    <string name="profile">الملف الشخصي</string>
+    <string name="register">التسجيل</string>
+    <string name="full_name">الاسم الكامل</string>
+    <string name="age">العمر</string>
+    <string name="gender">الجنس</string>
+    <string name="city">المدينة / المنطقة</string>
+    <string name="phone">رقم الهاتف</string>
+    <string name="quran_level">مستوى تلاوة القرآن</string>
+    <string name="program_type">البرنامج المطلوب</string>
+    <string name="submit_registration">إتمام التسجيل</string>
+    <string name="student_code">رمز الطالب</string>
+    <string name="minute_balance">رصيد الدقائق</string>
+    <string name="buy_credits">شراء الدقائق</string>
+    <string name="rate_per_min">1 دقيقة = 5 بير</string>
+    <string name="telebirr">تيليبير (Telebirr)</string>
+    <string name="cbe">بنك التجارة الإثيوبي (CBE)</string>
+    <string name="boa">بنك أبيسينيا (BOA)</string>
+    <string name="mpesa">إم بيسا (M-Pesa)</string>
+    <string name="admin_dashboard">لوحة التحكم</string>
+    <string name="announcements">الإعلانات</string>
+    <string name="live_classes">حلقات القرآن المباشرة</string>
+    <string name="settings">الإعدادات</string>
+    <string name="logout">تسجيل الخروج</string>
+</resources>
